@@ -11,7 +11,6 @@
 SCRIPT_DIR="$(dirname "$(realpath "$0")")"
 LOG_DIR="$SCRIPT_DIR/../../logs"
 LOG_FILE="$LOG_DIR/user_management.log"
-#LOG_FILE="$HOME/linux-admin-toolkit/logs/user_management.log"
 
 # Check if script is executed with sudo privileges
 if [[ $EUID -ne 0 ]]; then
