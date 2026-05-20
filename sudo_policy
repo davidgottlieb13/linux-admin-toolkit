@@ -1,0 +1,68 @@
+#Objective
+•	To implement a secure sudo policy in order to :
+•	control administrative privileges,
+•	limit abuse,
+•	strengthen traceability, and
+•	apply the principle of least privilege.
+
+
+#Context
+In professional environments :
+•	not all users should have full privileges,
+•	administrative actions must be controlled,
+•	sensitive commands must be restricted.
+System administrators therefore use :
+•	sudo groups,
+•	specific sudo rules,
+•	sudo logs,
+•	command restrictions.
+
+
+#Policy Security
+| Policy                | Value    |
+| --------------------- | -------- |
+| Authorized Admin User | gadmin   |
+| Root Direct Login     | Disabled |
+| Sudo Logging          | Enabled  |
+| Least Privilege       | Applied  |
+
+
+#Verify Sudo Access
+groups gadmin
+sudo whoami
+
+
+#Create Security Group
+sudo groupadd securityadmins
+sudo usermod -aG securityadmins gadmin
+groups gadmin
+
+
+#Configure Custom Sudo Policy
+sudo visudo -f /etc/sudoers.d/securityadmins
+%securityadmins ALL=(ALL) /usr/bin/systemctl, /usr/bin/journalctl
+
+
+#Explanation
+| Component       | Purpose                   |
+| --------------- | -----------------------   |
+| %securityadmins | Authorized group          |
+| ALL=(ALL)       | Every hosts/users         |
+| systemctl       | Services management       |
+| journalctl      | Logs consultation         |
+
+
+#Validate Sudo Syntax
+sudo visudo -c
+sudo visudo -c -f /etc/sudoers.d/securityadmins
+
+
+#Test Sudo Policy
+sudo systemctl status ssh --no-pager
+sudo journalctl -n 5
+sudo apt update
+
+
+#Sudo Logging
+sudo tail -f /var/log/auth.log
+
