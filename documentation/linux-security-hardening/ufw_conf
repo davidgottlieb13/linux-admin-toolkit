@@ -1,0 +1,62 @@
+#Objective
+Configure a Linux firewall to :
+•	control network access,
+•	reduce the attack surface,
+•	allow only necessary services, and
+•	secure the server.
+Using : UFW
+
+
+#Context
+In professional environments :
+•	not all ports should be accessible,
+•	only necessary services should be exposed,
+•	unauthorized connections must be blocked.
+A firewall is therefore an essential layer of security.
+
+
+#Network Security Policy
+| Rule             | Action   |
+| ---------------- | -------- |
+| Incoming Traffic | Deny     |
+| Outgoing Traffic | Allow    |
+| SSH              | Allow    |
+| HTTP             | Optional |
+| HTTPS            | Optional |
+
+
+#Verify UFW installation
+sudo ufw status
+sudo apt install ufw -y
+sudo systemctl status ufw --no-pager
+
+
+#Reset Existing Rules
+sudo ufw reset
+
+
+#Configure Default Policies
+sudo ufw default deny incoming
+sudo ufw default allow outgoing
+sudo ufw status verbose
+
+
+#Allow SSH Access
+sudo ufw allow ssh
+sudo ufw allow 22/tcp
+sudo ufw status numbered
+
+
+#Enable Firewall
+sudo ufw enable
+sudo ufw status verbose
+
+
+#Advanced Rules (Optional)
+sudo ufw allow 80/tcp
+sudo ufw allow 443/tcp
+sudo ufw status numbered
+sudo ss -tulnp
+sudo ufw status verbose
+sudo iptables -L
+
