@@ -1,0 +1,10 @@
+Module Objective
+Securing the Linux server using professional system hardening practices.
+This module introduces :
+•	reducing the attack surface,
+•	securing access,
+•	protection against brute-force attacks,
+•	permission control,
+•	sudo policies, and
+•	basic Linux server defense.
+

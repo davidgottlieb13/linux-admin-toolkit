@@ -1,0 +1,75 @@
+#Objective
+Secure the SSH service to :
+•	limit unauthorized access,
+•	reduce the risk of brute-force attacks,
+•	improve remote server security.
+
+
+#Context
+The SSH protocol is :
+•	essential,
+•	but also a frequent target of attacks.
+System administrators typically implement :
+•	disabling root login,
+•	disabling passwords,
+•	limiting authorized users,
+•	changing SSH configuration.
+
+
+#SSH Security Strategy
+| Setting                 | Value     |
+| ----------------------- | --------- |
+| Root Login              | Disabled  |
+| Password Authentication | Disabled  |
+| SSH Protocol            | Version 2 |
+| Allowed Users           | gadmin    |
+
+
+#IMPORTANT
+BEFORE making any changes:
+Create a VMware snapshot:
+MODULE5_BEFORE_SECURITY_HARDENING
+Using:
+VMware Workstation
+
+
+#Backup SSH Configuration
+Save SSH configuration
+sudo cp /etc/ssh/sshd_config /etc/ssh/sshd_config.bak
+ls -l /etc/ssh/sshd_config*
+
+
+#SSH Key Generation
+Objective: Use SSH key authentication instead of passwords.
+ssh-keygen -t rsa -b 4096
+ssh-copy-id gadmin@localhost
+ssh gadmin@localhost
+
+
+#SSH Configuration Hardening
+sudo nano /etc/ssh/sshd_config
+PermitRootLogin no
+PasswordAuthentication no
+PubkeyAuthentication yes
+Protocol 2
+AllowUsers gadmin
+MaxAuthTries 3
+ClientAliveInterval 300
+ClientAliveCountMax 2
+
+
+#Explanations
+| Directive                 | Purpose                 |
+| ------------------------- | ----------------------- |
+| PermitRootLogin no        | Block acces root        |
+| PasswordAuthentication no | Disable password        |
+| PubkeyAuthentication yes  | Activate SSH keys       |
+| AllowUsers                | Restrict access         |
+| MaxAuthTries 3            | Bruteforce limit        |
+
+
+#Validate SSH Configuration
+sudo sshd -t
+sudo systemctl restart ssh
+sudo systemctl status ssh --no-pager
+ssh gadmin@localhost
