@@ -1,0 +1,73 @@
+#Objective
+To strengthen Linux system security by :
+•	applying secure permissions,
+•	protecting sensitive files,
+•	limiting unauthorized access,
+•	implementing the principle of least privilege.
+
+
+#Context
+In professional environments :
+•	Incorrect permissions represent a critical risk,
+•	sensitive files can be exposed,
+•	excessive access increases the attack surface.
+System administrators therefore implement :
+•	restrictive permissions,
+•	dedicated groups,
+•	access controls,
+•	regular audits.
+
+
+#Security Policy
+| Resource        | Policy                    |
+| --------------- | ------------------------- |
+| Sensitive Files | Restricted                |
+| Backup Files    | Protected                 |
+| Scripts         | Executable only if needed |
+| SSH Keys        | Owner only                |
+| Logs            | Controlled access         |
+
+
+#Create security lab
+mkdir -p ~/security-hardening-lab
+cd ~/security-hardening-lab
+touch confidential.txt
+touch internal.txt
+touch public.txt
+ls -l
+
+
+#Apply Secure Permissions
+chmod 600 confidential.txt
+chmod 640 internal.txt
+chmod 644 public.txt
+ls -l
+
+
+#Secure Script Permissions
+ls -l ~/linux-admin-toolkit/scripts
+chmod 750 ~/linux-admin-toolkit/scripts/*.sh
+chmod 750 ~/linux-admin-toolkit/scripts/monitoring/*.sh
+chmod 750 ~/linux-admin-toolkit/scripts/user-management/*.sh
+find ~/linux-admin-toolkit/scripts -type f -exec ls -l {} \;
+
+
+#Secure SSH Directory
+ls -ld ~/.ssh
+ls -l ~/.ssh
+chmod 700 ~/.ssh
+chmod 600 ~/.ssh/id_rsa
+chmod 644 ~/.ssh/id_rsa.pub
+ls -l ~/.ssh
+
+
+#Secure Backup Files
+ls -lh /opt/backups
+chmod 600 /opt/backups/*.tar.gz
+ls -lh /opt/backups
+
+
+#Find Insecure Permissions
+find ~/linux-admin-toolkit -type f -perm -o+w
+find ~/linux-admin-toolkit -type d -perm -o+w
+
