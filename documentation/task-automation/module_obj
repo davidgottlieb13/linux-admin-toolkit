@@ -1,0 +1,14 @@
+Module Objective
+Automate Linux administrative tasks to :
+•	reduce manual tasks,
+•	schedule critical operations,
+•	automate backups,
+•	generate logs automatically, and
+•	improve operational efficiency.
+
+This module introduces :
+•	system automation,
+•	task scheduling,
+•	cron job management, and
+•	Linux administration workflows.
+With : Cron.

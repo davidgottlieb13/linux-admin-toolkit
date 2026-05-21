@@ -1,0 +1,16 @@
+#Objective
+Plan the automated monitoring. 
+
+
+crontab -e
+# System health every 30 minutes
+*/30 * * * * /home/gadmin/linux-admin-toolkit/scripts/monitoring/system_health.sh
+# Disk monitoring every hour
+0 * * * * /home/gadmin/linux-admin-toolkit/scripts/monitoring/disk_monitor.sh
+# Memory monitoring every hour
+15 * * * * /home/gadmin/linux-admin-toolkit/scripts/monitoring/memory_monitor.sh
+# Process monitoring every 2 hours
+0 */2 * * * /home/gadmin/linux-admin-toolkit/scripts/monitoring/process_monitor.sh
+
+
+crontab -l

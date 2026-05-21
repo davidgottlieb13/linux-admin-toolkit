@@ -1,0 +1,10 @@
+#Objective
+Validate the entire automation system.
+
+
+#Verify active cron
+sudo systemctl status cron --no-pager
+crontab -l
+sudo grep CRON /var/log/syslog | tail
+tree ~/linux-admin-toolkit
+

@@ -1,0 +1,21 @@
+#Objective
+Centralize and check automation logs. 
+
+
+#Verify project logs
+ls -lh ~/linux-admin-toolkit/logs
+cat ~/linux-admin-toolkit/logs/monitoring.log
+cat ~/linux-admin-toolkit/logs/backup.log
+sudo grep CRON /var/log/syslog
+
+
+#Manual Cron Test
+#Objective
+Test scripts before automatic execution.
+
+
+~/linux-admin-toolkit/scripts/backup.sh
+~/linux-admin-toolkit/scripts/monitoring/system_health.sh
+tail ~/linux-admin-toolkit/logs/backup.log
+tail ~/linux-admin-toolkit/logs/monitoring.log
+

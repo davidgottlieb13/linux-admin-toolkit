@@ -1,0 +1,31 @@
+#Context
+In professional environments :
+•	repetitive tasks must be automated,
+•	backups must be scheduled,
+•	monitoring must be periodic, and
+•	logs must be generated automatically.
+System administrators therefore use :
+•	cron,
+•	Bash scripts,
+•	automated logging, and
+•	scheduled tasks.
+
+
+#Technical Objectives
+The system must :
+•	automatically perform backups,
+•	run monitoring periodically,
+•	log operations, and
+•	validate scheduled tasks.
+
+
+#Architecture Automation
+| Component              | Purpose                  |
+| ---------------------- | ------------------------ |
+| backup.sh              | Automatic backups        |
+| cleanup_old_backups.sh | Automatic cleanup        |
+| monitoring scripts     | Automatic monitoring     |
+| cron jobs              | Planning                 |
+
+
+

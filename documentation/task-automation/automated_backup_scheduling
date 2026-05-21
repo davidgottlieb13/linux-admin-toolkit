@@ -1,0 +1,29 @@
+#Objective
+Automate :
+•	backups,
+•	cleanups,
+•	logs generation.
+
+
+#Prepare Scripts
+ls -l ~/linux-admin-toolkit/scripts
+find ~/linux-admin-toolkit/scripts -name "*.sh" -exec ls -l {} \;
+
+
+#Configure Backup Cron Jobs
+crontab -e
+# Automated backup every day at 1 AM
+0 1 * * * /home/gadmin/linux-admin-toolkit/scripts/backup.sh
+# Cleanup old backups every Sunday at 2 AM
+0 2 * * 0 /home/gadmin/linux-admin-toolkit/scripts/cleanup_old_backups.sh
+
+
+#Explanations
+| Schedule  | Purpose                 |
+| --------- | ----------------------- |
+| 0 1 * * * | Everyday at 01 am       |
+| 0 2 * * 0 | Everysunday at 02 am    |
+
+
+#Verification
+crontab -l
