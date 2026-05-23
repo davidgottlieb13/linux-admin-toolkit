@@ -11,7 +11,6 @@ SCRIPT_DIR="$(dirname "$(realpath "$0")")"
 LOG_DIR="$SCRIPT_DIR/../../logs"
 LOG_FILE="$LOG_DIR/user_management.log"
 
-
 # Check sudo privileges
 if [[ $EUID -ne 0 ]]; then
     echo "[-] Please run this script with sudo privileges."

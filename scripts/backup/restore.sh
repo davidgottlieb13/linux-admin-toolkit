@@ -9,8 +9,9 @@
 
 BACKUP_DIR="/opt/backups"
 RESTORE_DIR="/opt/restore"
+
 SCRIPT_DIR="$(dirname "$(realpath "$0")")"
-LOG_DIR="$SCRIPT_DIR/../logs"
+LOG_DIR="$SCRIPT_DIR/../../logs"
 LOG_FILE="$LOG_DIR/backup.log"
 
 # Validate arguments

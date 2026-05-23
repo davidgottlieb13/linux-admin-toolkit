@@ -4,3 +4,6 @@ sam. 16 mai 2026 15:22:50 UTC - Restore successful: backup_2026-05-16_15-03-08.t
 sam. 16 mai 2026 16:10:23 UTC - Cleanup completed. Removed 1 old backup(s).
 sam. 16 mai 2026 16:11:24 UTC - Cleanup completed. Removed 2 old backup(s).
 jeu. 21 mai 2026 18:29:51 UTC - Backup successful: backup_2026-05-21_18-29-51.tar.gz
+sam. 23 mai 2026 12:23:35 UTC - Backup successful: backup_2026-05-23_12-23-35.tar.gz
+sam. 23 mai 2026 12:26:00 UTC - Restore successful: backup_2026-05-16_14-41-43.tar.gz
+sam. 23 mai 2026 12:27:45 UTC - Cleanup completed. Removed 1 old backup(s).

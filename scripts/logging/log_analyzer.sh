@@ -32,21 +32,8 @@ echo ""
 
 echo "---------- LAST 10 SYSLOG EVENTS ----------"
 tail -10 "$SYSLOG"
+
 echo ""
 
-# Show last 10 errors
-if [[ $ERROR_COUNT -gt 0 ]]; then
-    echo "---------- LAST 10 ERRORS ----------"
-    grep -i "error" "$SYSLOG" | tail -10
-    echo ""
-fi
-
-# Show last 10 warnings
-if [[ $WARNING_COUNT -gt 0 ]]; then
-    echo "---------- LAST 10 WARNINGS ----------"
-    grep -i "warning" "$SYSLOG" | tail -10
-    echo ""
-fi
-
 # Logging
-echo "$(date) - Log analysis executed (Errors: $ERROR_COUNT, Warnings: $WARNING_COUNT)" >> "$LOG_FILE"
+echo "$(date) - Log analysis executed" >> "$LOG_FILE"

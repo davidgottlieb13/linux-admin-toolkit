@@ -8,3 +8,8 @@ sam. 16 mai 2026 12:20:08 UTC - User testuser created and added to group devops
 sam. 16 mai 2026 12:24:45 UTC - User testuser created and added to group testuser
 sam. 16 mai 2026 12:28:27 UTC - Password policy applied to user testuser
 
+sam. 23 mai 2026 12:10:49 UTC - User testtesttest created and added to group testtesttest
+sam. 23 mai 2026 12:14:06 UTC - User testtesttest deleted from the system
+sam. 23 mai 2026 12:15:58 UTC - User testtest account locked
+sam. 23 mai 2026 12:18:43 UTC - Password policy applied to user test
+sam. 23 mai 2026 12:22:16 UTC - Backup successful: backup_2026-05-23_12-22-16.tar.gz

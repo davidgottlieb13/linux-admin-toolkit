@@ -7,7 +7,6 @@
 # Project: Linux Server Administration & Automation Toolkit
 # =========================================================
 
-
 SCRIPT_DIR="$(dirname "$(realpath "$0")")"
 LOG_DIR="$SCRIPT_DIR/../../logs"
 LOG_FILE="$LOG_DIR/user_management.log"
@@ -33,7 +32,7 @@ if id "$USERNAME" &>/dev/null; then
     exit 1
 fi
 
-# Check if group exists
+# Check is group already exists
 if getent group "$GROUPNAME" > /dev/null; then
     echo "[+] Group $GROUPNAME already exists"
     useradd -m -s /bin/bash -g "$GROUPNAME" "$USERNAME"

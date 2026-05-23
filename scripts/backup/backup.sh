@@ -9,8 +9,9 @@
 
 SOURCE_DIR="/opt/backup-sources"
 BACKUP_DIR="/opt/backups"
+
 SCRIPT_DIR="$(dirname "$(realpath "$0")")"
-LOG_DIR="$SCRIPT_DIR/../logs"
+LOG_DIR="$SCRIPT_DIR/../../logs"
 LOG_FILE="$LOG_DIR/backup.log"
 
 TIMESTAMP=$(date +"%Y-%m-%d_%H-%M-%S")
