@@ -36,15 +36,15 @@ The main objectives of this project were:
 
 # Technologies Used
 
-| Technology | Purpose |
-|---|---|
-| Ubuntu Server | Linux Environment |
-| Bash Scripting | Automation |
-| Cron | Task Scheduling |
-| UFW | Firewall Management |
-| Fail2ban | Brute-force Protection |
-| Git & GitHub | Version Control |
-| VMware Workstation | Virtualization |
+| Technology               | Purpose                |
+|--------------------------|------------------------|
+| Ubuntu Server            | Linux Environment      |
+| Bash Scripting           | Automation             |
+| Cron                     | Task Scheduling        |
+| UFW                      | Firewall Management    |
+| Fail2ban                 | Brute-force Protection |
+| Git & GitHub             | Version Control        |
+| VMware Workstation       | Virtualization         |
 
 ---
 
