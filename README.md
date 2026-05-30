@@ -272,14 +272,19 @@ Example:
   ![Memory Monitor](screenshots/2-memory_monitor.sh.png)
   ![Process Monitor](screenshots/3-process_monitor.sh.png)
   ![System Health](screenshots/4-system_health.sh.png)
+  
 - Backup execution
   ![Backup Execution](screenshots/5-backup.sh.png)
+  
 - UFW configuration
   ![Ufw Configuration](screenshots/6-Ufw_configuration.png)
+  
 - Fail2ban status
   ![Fail2ban status](screenshots/7-Fail2ban_status.png)
+  
 - Cron jobs
   ![Cron Jobs](screenshots/8-Cron_jobs.png)
+  
 - Logging analysis
   ![Authentication Failure Detection](screenshots/9-auth_failure_detector.sh.png)
   ![Log Analyzer](screenshots/10-log_analyzer.sh.png)
